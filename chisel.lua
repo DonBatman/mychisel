@@ -11,36 +11,68 @@ chisel.program = {}
 chisel.mode = {}
 
 local default_material = {
-	{"default:cobble", "default_cobble", "Cobble"},
-	{"default:sandstone","default_sandstone", "Sandstone"},
-	{"default:clay","default_clay",  "Clay"},
-	{"default:coalblock","default_coal_block",  "Coal Block"},
-	{"default:stone","default_stone", "Stone"},
-	{"default:desert_stone","default_desert_stone", "Desert Stone"},
-	{"default:wood","default_wood", "Wood"},
-	{"default:acacia_wood","default_acacia_wood", "Acacia Wood"},
-	{"default:aspen_wood","default_aspen_wood", "Aspen Wood"},
-	{"default:pine_wood","default_pine_wood", "Pine Wood"},
-	{"default:desert_cobble","default_desert_cobble", "Desert Cobble"},
-	{"default:junglewood","default_junglewood", "Jungle Wood"},
-	{"default:sandstonebrick","default_sandstone_brick", "Sandstone Brick"},
-	{"default:stonebrick","default_stone_brick", "Stone Brick"},
-	{"default:desert_stonebrick","default_desert_stone_brick", "Desert Stone Brick"},
-	{"default:steelblock", "default_steel_block", "Steel Block"},
-	{"default:copperblock", "default_copper_block", "Copper Block"},
-	{"default:bronzeblock", "default_bronze_block", "Bronze Block"},
-	{"default:goldblock", "default_gold_block", "Gold Block"},
-	{"default:tinblock", "default_tin_block", "Tin Block"},
-	{"moreblocks:copperpatina", "moreblocks_copperpatina", "Copperpatina"},
-	{"default:desert_sandstone","default_desert_sandstone", "Desert Sandstone"},
-	{"default:desert_sandstone_brick","default_desert_sandstone_brick", "Desert Sandstonebrick"},
-	{"default:silver_sandstone","default_silver_sandstone", "Silver Sandstone"},
-	{"default:silver_sandstone_brick","default_silver_sandstone_brick", "Silver Sandstonebrick"},
+	{"default:cobble", 					"default_cobble", 								"Cobble"},
+	{"default:sandstone",				"default_sandstone", 							"Sandstone"},
+	{"default:clay",					"default_clay",  								"Clay"},
+	{"default:coalblock",				"default_coal_block",  							"Coal Block"},
+	{"default:stone",					"default_stone", 								"Stone"},
+	{"default:desert_stone",			"default_desert_stone", 						"Desert Stone"},
+	{"default:wood",					"default_wood", 								"Wood"},
+	{"default:acacia_wood",				"default_acacia_wood", 							"Acacia Wood"},
+	{"default:aspen_wood",				"default_aspen_wood", 							"Aspen Wood"},
+	{"default:pine_wood",				"default_pine_wood", 							"Pine Wood"},
+	{"default:desert_cobble",			"default_desert_cobble", 						"Desert Cobble"},
+	{"default:junglewood",				"default_junglewood", 							"Jungle Wood"},
+	{"default:sandstonebrick",			"default_sandstone_brick", 						"Sandstone Brick"},
+	{"default:stonebrick",				"default_stone_brick", 							"Stone Brick"},
+	{"default:desert_stonebrick",		"default_desert_stone_brick", 					"Desert Stone Brick"},
+	{"default:steelblock", 				"default_steel_block", 							"Steel Block"},
+	{"default:copperblock", 			"default_copper_block", 						"Copper Block"},
+	{"default:bronzeblock", 			"default_bronze_block", 						"Bronze Block"},
+	{"default:goldblock", 				"default_gold_block", 							"Gold Block"},
+	{"default:tinblock", 				"default_tin_block", 							"Tin Block"},
+	{"moreblocks:copperpatina", 		"moreblocks_copperpatina", 						"Copperpatina"},
+	{"default:desert_sandstone",		"default_desert_sandstone", 					"Desert Sandstone"},
+	{"default:desert_sandstone_brick",	"default_desert_sandstone_brick", 				"Desert Sandstonebrick"},
+	{"default:silver_sandstone",		"default_silver_sandstone", 					"Silver Sandstone"},
+	{"default:silver_sandstone_brick",	"default_silver_sandstone_brick", 				"Silver Sandstonebrick"},
+	{"mywhiteblock:block",				"mywhiteblock_white^[colorize:#ffffff:200", 	"My White Block"},
+	{"mywhiteblock:block_black",		"mywhiteblock_white^[colorize:#000000:240",		"Black"},
+	{"mywhiteblock:block_blue",			"mywhiteblock_white^[colorize:#272dc8:200",		"Blue"},
+	{"mywhiteblock:block_brown",		"mywhiteblock_white^[colorize:#190B07:160",		"Brown"},
+	{"mywhiteblock:block_cyan",			"mywhiteblock_white^[colorize:#00ffff:120",		"Cyan"},
+	{"mywhiteblock:block_darkgreen",	"mywhiteblock_white^[colorize:#071907:200",		"Dark Green"},
+	{"mywhiteblock:block_darkgrey",		"mywhiteblock_white^[colorize:#000000:200",		"Dark Grey"},
+	{"mywhiteblock:block_green",		"mywhiteblock_white^[colorize:#00ff00:160",		"Green"},
+	{"mywhiteblock:block_grey",			"mywhiteblock_white^[colorize:#000000:160",		"Grey"},
+	{"mywhiteblock:block_magenta",		"mywhiteblock_white^[colorize:#ff00ff:160",		"Magenta"},
+	{"mywhiteblock:block_orange",		"mywhiteblock_white^[colorize:#ff7700:220",		"Orange"},
+	{"mywhiteblock:block_pink",			"mywhiteblock_white^[colorize:#FE2E9A:200",		"Pink"},
+	{"mywhiteblock:block_red",			"mywhiteblock_white^[colorize:#B40404:200",		"Red"},
+	{"mywhiteblock:block_violet",		"mywhiteblock_white^[colorize:#2F0B3A:220",		"Violet"},
+	{"mywhiteblock:block_white",		"mywhiteblock_white^[colorize:#ffffff:200",		"White"},
+	{"mywhiteblock:block_yellow",		"mywhiteblock_white^[colorize:#ffff00:200",		"Yellow"},
+	{"mywhiteblock:block_peachpuff",	"mywhiteblock_white^[colorize:#FFDAB9:200",		"Peachpuff"},
+	{"mywhiteblock:block_navy",			"mywhiteblock_white^[colorize:#000080:200",		"Navy"},
+	{"mywhiteblock:block_coral",		"mywhiteblock_white^[colorize:#FF7F50:200",		"Coral"},
+	{"mywhiteblock:block_khaki",		"mywhiteblock_white^[colorize:#F0E68C:200",		"Khaki"},
+	{"mywhiteblock:block_lime",			"mywhiteblock_white^[colorize:#00FF00:200",		"Lime"},
+	{"mywhiteblock:block_light_pink",	"mywhiteblock_white^[colorize:#FFB6C1:200",		"Light Pink"},
+	{"mywhiteblock:block_light_grey",	"mywhiteblock_white^[colorize:#D3D3D3:200",		"Light Grey"},
+	{"mywhiteblock:block_purple",		"mywhiteblock_white^[colorize:#800080:200",		"Purple"},
+	{"mywhiteblock:block_maroon",		"mywhiteblock_white^[colorize:#800000:200",		"Maroon"},
+	{"mywhiteblock:block_aquamarine",	"mywhiteblock_white^[colorize:#7FFFD4:200",		"Aqua Marine"},
+	{"mywhiteblock:block_chocolate",	"mywhiteblock_white^[colorize:#D2691E:200",		"Chocolate"},
+	{"mywhiteblock:block_crimson",		"mywhiteblock_white^[colorize:#DC143C:200",		"Crimson"},
+	{"mywhiteblock:block_olive",		"mywhiteblock_white^[colorize:#808000:200",		"Olive"},
+	{"mywhiteblock:block_white_smoke",	"mywhiteblock_white^[colorize:#F5F5F5:200",		"White Smoke"},
+	{"mywhiteblock:block_mistyrose",	"mywhiteblock_white^[colorize:#FFE4E1:200",		"Misty Rose"},
+	{"mywhiteblock:block_orchid",		"mywhiteblock_white^[colorize:#DA70D6:200",		"Orchid"},
 }
 
 
 
-if minetest.get_modpath( "bakedclay") then
+if core.get_modpath( "bakedclay") then
 	local clay = {
 		{"white", "White"},
 		{"grey", "Grey"},
@@ -66,7 +98,7 @@ if minetest.get_modpath( "bakedclay") then
 end
 
 -- Chatcommand to show loaded mods with names and number of styles and supported materials
-minetest.register_chatcommand("chisel", {
+core.register_chatcommand("chisel", {
 	params = "",
 	description = "Shows supported mods and materials in mychisel",
 	privs = {interact = true},
@@ -76,15 +108,15 @@ minetest.register_chatcommand("chisel", {
 			local counter = 1
 			local rawname = ""
 
-			minetest.chat_send_player(name,core.colorize(color,i..") modname: "..chisel.mods[i][1].."   styles: "..chisel.mods[i][2]))
+			core.chat_send_player(name,core.colorize(color,i..") modname: "..chisel.mods[i][1].."   styles: "..chisel.mods[i][2]))
 			if chisel.mods[i][1] == "default" then
 				for j in ipairs (default_material) do
-					minetest.chat_send_player(name, "     "..j..": "..default_material[j][1])
+					core.chat_send_player(name, "     "..j..": "..default_material[j][1])
 				end
 			else
 				for j in ipairs (chisel.materials) do
 					if chisel.materials[j][3] ~= rawname then
-						minetest.chat_send_player(name, "     "..counter..": "..chisel.materials[j][3])
+						core.chat_send_player(name, "     "..counter..": "..chisel.materials[j][3])
 						rawname = chisel.materials[j][3]
 						counter = counter +1
 					end
@@ -112,7 +144,7 @@ function chisel.add_mod(modname,number)                     -- global function t
 	chisel.mods [counter] = {}
 	chisel.mods [counter][1] = modname
 	chisel.mods [counter][2] = number
-	minetest.log("action","[CHISEL] Added mod "..modname .. " with " .. number.." styles to mychisel") -- log loaded mods to debug.txt
+	core.log("action","[CHISEL] Added mod "..modname .. " with " .. number.." styles to mychisel") -- log loaded mods to debug.txt
 end
 
 
@@ -144,14 +176,14 @@ local function chiselinit(name)
 	chisel.mode[name] = "1"
 end
 
-minetest.register_on_joinplayer(function(player)
+core.register_on_joinplayer(function(player)
 	chiselinit(player:get_player_name())
 end)
 
 -- end init
 
 local function parti(pos)
-	minetest.add_particlespawner({
+	core.add_particlespawner({
 		amount = 25,
 		time = 0.3,
 		minpos = pos,
@@ -182,9 +214,9 @@ local function chiselcut(pos,user,node)
 					return false
 				end
 
-				minetest.set_node(pos, {
+				core.set_node(pos, {
 					name = stack:get_name(),
-					param2 = minetest.dir_to_facedir(user:get_look_dir())
+					param2 = core.dir_to_facedir(user:get_look_dir())
 				})
 				return true
 			end
@@ -213,7 +245,7 @@ local function change_mode(user, choice)
 		end
 
 		chisel.program[name] = player_program
-		minetest.chat_send_player(name, core.colorize(color, chisel.materials[player_program][4]))
+		core.chat_send_player(name, core.colorize(color, chisel.materials[player_program][4]))
 		return
 	end
 
@@ -223,7 +255,7 @@ local function change_mode(user, choice)
 	end
 
 	chisel.mode[name] = player_mode
-	minetest.chat_send_player(name, core.colorize(color, chisel_modes[player_mode].desc))
+	core.chat_send_player(name, core.colorize(color, chisel_modes[player_mode].desc))
 end
 
 
@@ -249,9 +281,9 @@ local function chiselme(pos, user, node)
 			end
 		end
 		if newnode then
-			minetest.swap_node(pos, {
+			core.swap_node(pos, {
 				name = newnode,
-				param2 = minetest.dir_to_facedir(user:get_look_dir())
+				param2 = core.dir_to_facedir(user:get_look_dir())
 			})
 			parti(pos)
 		end
@@ -269,11 +301,11 @@ local chisel_def = {
 		local number = chisel.count_mods()
 		local keys = user:get_player_control()
 		local name = user:get_player_name()
-		local node = minetest.get_node(pointed_thing.under)
+		local node = core.get_node(pointed_thing.under)
 
 		-- chisel can be repaired with an anvil
 		if node.name == "anvil:anvil" then
-			minetest.item_place(itemstack, user, pointed_thing)
+			core.item_place(itemstack, user, pointed_thing)
 			return itemstack
 		end
 
@@ -291,7 +323,7 @@ local chisel_def = {
 			end
 
 			chisel.active[name] = chisel.mods[chisel.selected[name]][1]
-			minetest.chat_send_player(
+			core.chat_send_player(
 				user:get_player_name(),
 				core.colorize(color, " ***>>> switched to mod: "..chisel.active[name])
 			)
@@ -300,19 +332,19 @@ local chisel_def = {
 	end
 }
 
-if not minetest.get_modpath("technic") then
+if not core.get_modpath("technic") then
 	chisel_def.on_use = function(itemstack, user, pointed_thing)
 		if pointed_thing.type ~= "node" then
 			return
 		end
 
 		local pos = pointed_thing.under
-		local node = minetest.get_node(pos)
+		local node = core.get_node(pos)
 		local name = user:get_player_name()
 		local cut = false
 
-		if minetest.is_protected(pos, user:get_player_name()) then
-			minetest.record_protection_violation(pos, user:get_player_name())
+		if core.is_protected(pos, user:get_player_name()) then
+			core.record_protection_violation(pos, user:get_player_name())
 			return
 		end
 
@@ -322,16 +354,16 @@ if not minetest.get_modpath("technic") then
 			cut = chiselcut(pos,user,node)
 		end
 
-		if not minetest.settings:get_bool("creative_mode") and cut then
+		if not core.settings:get_bool("creative_mode") and cut then
 			itemstack:add_wear(65535 / (USES - 1))
 		end
 
 		return itemstack
 	end
 
-	minetest.register_tool("mychisel:chisel", chisel_def)
+	core.register_tool("mychisel:chisel", chisel_def)
 
-	minetest.register_craft({
+	core.register_craft({
 		output = "mychisel:chisel",
 		recipe = {
 			{"default:steel_ingot"},
@@ -354,11 +386,11 @@ else -- technic is installed
 			end
 
 			local pos = pointed_thing.under
-			local node = minetest.get_node(pos)
+			local node = core.get_node(pos)
 			local name = user:get_player_name()
 
-			if minetest.is_protected(pos, name) then
-				minetest.record_protection_violation(pos, name)
+			if core.is_protected(pos, name) then
+				core.record_protection_violation(pos, name)
 				return
 			end
 
@@ -383,15 +415,15 @@ else -- technic is installed
 			end
 
 			local pos = pointed_thing.under
-			local node = minetest.get_node(pos)
+			local node = core.get_node(pos)
 			local name = user:get_player_name()
 
-			if minetest.is_protected(pos, user:get_player_name()) then
-				minetest.record_protection_violation(pos, user:get_player_name())
+			if core.is_protected(pos, user:get_player_name()) then
+				core.record_protection_violation(pos, user:get_player_name())
 				return
 			end
 
-			local meta = minetest.deserialize(itemstack:get_metadata())
+			local meta = core.deserialize(itemstack:get_metadata())
 			if not meta or not meta.charge or
 					meta.charge < chisel_charge_per_node then
 				return
@@ -406,16 +438,16 @@ else -- technic is installed
 
 			if not technic.creative_mode then
 				technic.set_RE_wear(itemstack, meta.charge, TechnicMaxCharge)
-				itemstack:set_metadata(minetest.serialize(meta))
+				itemstack:set_metadata(core.serialize(meta))
 			end
 
 			return itemstack
 		end,
 
-		minetest.register_tool("mychisel:chisel", chisel_def)
+		core.register_tool("mychisel:chisel", chisel_def)
 	end
 
-	minetest.register_craft({
+	core.register_craft({
 		output = "mychisel:chisel",
 		recipe = {
 			{"default:diamond", "default:diamond" ,              "default:diamond"},
